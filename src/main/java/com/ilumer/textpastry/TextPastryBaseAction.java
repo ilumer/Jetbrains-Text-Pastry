@@ -6,10 +6,9 @@ import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.Messages;
 import org.jetbrains.annotations.NotNull;
 
-public class TextPastry extends AnAction {
+public abstract class TextPastryBaseAction extends AnAction {
 
     @Override
     public void actionPerformed(@NotNull AnActionEvent e) {
@@ -21,13 +20,14 @@ public class TextPastry extends AnAction {
         // Getting the primary caret ensures we get the correct one of a possible many.
         for (int i = 0; i < caretModel.getAllCarets().size(); i++) {
             Caret caret = caretModel.getAllCarets().get(i);
-            int start = caret.getSelectionStart();
             int end = caret.getSelectionEnd();
             // Replace the selection with a fixed string.
             // Must do this document change in a write action context.
-            String appendText = "" + i;
+            String appendText = generateAppendStr(i);
             WriteCommandAction.runWriteCommandAction(project, () -> document.insertString(end, appendText));
             caret.moveToOffset(end + appendText.length());
         }
     }
+
+    public abstract String generateAppendStr(int index);
 }
