@@ -35,6 +35,7 @@
                     text="0 to X"
                     description="0 to X">
             </action>
+
             <action
                     id="textpastry.OnetoxAction"
                     class="com.ilumer.textpastry.OnetoxAction"
@@ -47,6 +48,13 @@
                     class="com.ilumer.textpastry.AtoxAction"
                     text="A to X"
                     description="A to X">
+            </action>
+
+            <action
+                    id="textpastry.UuidAction"
+                    class="com.ilumer.textpastry.UuidAction"
+                    text="Uuid"
+                    description="Uuid">
             </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </group>

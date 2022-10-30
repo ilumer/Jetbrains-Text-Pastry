@@ -8,6 +8,8 @@ import com.intellij.openapi.editor.*;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.List;
+
 public abstract class TextPastryBaseAction extends AnAction {
 
     @Override
@@ -17,17 +19,20 @@ public abstract class TextPastryBaseAction extends AnAction {
         Project project = e.getRequiredData(CommonDataKeys.PROJECT);
         final CaretModel caretModel = editor.getCaretModel();
         Document document = editor.getDocument();
-        // Getting the primary caret ensures we get the correct one of a possible many.
-        for (int i = 0; i < caretModel.getAllCarets().size(); i++) {
-            Caret caret = caretModel.getAllCarets().get(i);
-            int end = caret.getSelectionEnd();
-            // Replace the selection with a fixed string.
-            // Must do this document change in a write action context.
-            String appendText = generateAppendStr(i);
-            WriteCommandAction.runWriteCommandAction(project, () -> document.insertString(end, appendText));
-            caret.moveToOffset(end + appendText.length());
-        }
+        WriteCommandAction.runWriteCommandAction(project, () -> {
+            List<Caret> carets = caretModel.getAllCarets();
+            for (int i = 0; i < carets.size(); i++) {
+                Caret caret = carets.get(i);
+                // Replace the selection with a fixed string.
+                // Must do this document change in a write action context.
+                String appendText = generateAppendStr(i);
+                int end = caret.getSelectionEnd();
+                document.insertString(end, appendText);
+                caret.moveToOffset(end + appendText.length());
+            }
+        });
     }
+
 
     public abstract String generateAppendStr(int index);
 }
