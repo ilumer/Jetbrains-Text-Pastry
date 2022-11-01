@@ -56,6 +56,20 @@
                     text="Uuid"
                     description="Uuid">
             </action>
+
+            <action
+                    id="textpastry.WorldListAction"
+                    class="com.ilumer.textpastry.WorldListAction"
+                    text="WorldList"
+                    description="WorldList">
+            </action>
+
+            <action
+                    id="textpastry.PasteLinesAction"
+                    class="com.ilumer.textpastry.PasteLinesAction"
+                    text="Paste Lines"
+                    description="Paste lines">
+            </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </group>
     </actions>
