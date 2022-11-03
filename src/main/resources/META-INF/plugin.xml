@@ -70,6 +70,13 @@
                     text="Paste Lines"
                     description="Paste lines">
             </action>
+
+            <action
+                    id="textpastry.RangeAction"
+                    class="com.ilumer.textpastry.RangeAction"
+                    text="Range"
+                    description="Range">
+            </action>
             <add-to-group group-id="EditorPopupMenu" anchor="first"/>
         </group>
     </actions>
