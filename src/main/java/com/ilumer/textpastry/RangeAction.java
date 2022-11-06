@@ -27,7 +27,7 @@ public class RangeAction extends AnAction {
         final CaretModel caretModel = editor.getCaretModel();
         Document document = editor.getDocument();
 
-        String inputTxt = Messages.showInputDialog(project, "Where should the range start", "Range", Messages.getQuestionIcon());
+        String inputTxt = Messages.showInputDialog(project, "Where should the range start", "Range", null);
         if (inputTxt == null) {
             return;
         }
@@ -36,6 +36,7 @@ public class RangeAction extends AnAction {
             start = Integer.parseInt(inputTxt);
         } catch (NumberFormatException exception) {
             // Popup Message
+            Messages.showErrorDialog(project, "Please input number", "Range");
             return;
         }
         WriteCommandAction.runWriteCommandAction(project, () -> {

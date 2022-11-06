@@ -23,7 +23,7 @@ public class WorldListAction extends AnAction {
         final CaretModel caretModel = editor.getCaretModel();
         Document document = editor.getDocument();
 
-        String inputTxt = Messages.showInputDialog(project, "List of words (space separated)", "WorldList", Messages.getQuestionIcon());
+        String inputTxt = Messages.showInputDialog(project, "List of words (space separated)", "WorldList", null);
         if (inputTxt == null) {
             return;
         }
