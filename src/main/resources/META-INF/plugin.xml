@@ -7,13 +7,31 @@
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
     <name>Text-Pastry</name>
 
+    <version>1.0.1</version>
+    <idea-version since-build="201" until-build="231.*"/>
+    <change-notes>
+        <![CDATA[
+<h2>features</h2>
+<ul>
+    <li>0(1) to x</li>
+    <li>a to x</li>
+    <li>uuid</li>
+    <li>worldList</li>
+    <li>pasteLine</li>
+    <li>range</li>
+</ul>
+]]>
+    </change-notes>
+
     <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
     <vendor email="ilumer.qxq@gmail.com" url="https://github.com/ilumer">ilumer</vendor>
 
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description>Text-Pastry fork for developer in jetbrains idea</description>
+    <description>Text Pastry is a free plugin for jetbrains, dedicated to reduce repetetive work by extending the power of multiple cursors and selection ranges. it is a migration project from
+        https://github.com/duydao/Text-Pastry
+    </description>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
