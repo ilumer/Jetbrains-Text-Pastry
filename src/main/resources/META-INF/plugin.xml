@@ -8,7 +8,7 @@
     <name>Text-Pastry</name>
 
     <version>1.0.1</version>
-    <idea-version since-build="201" until-build="231.*"/>
+    <idea-version since-build="201" until-build="232.*"/>
     <change-notes>
         <![CDATA[
 <h2>features</h2>
