@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.ilumer.textpastry"
-version = "1.0.3"
+version = "1.0.4"
 
 repositories {
     mavenCentral()
@@ -15,6 +15,7 @@ repositories {
 intellij {
     version.set("2020.1.1")
     type.set("IC") // Target IDE Platform
+    updateSinceUntilBuild.set(false)
 
     plugins.set(listOf(/* Plugin Dependencies */))
 }
